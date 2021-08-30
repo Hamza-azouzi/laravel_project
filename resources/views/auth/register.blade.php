@@ -22,7 +22,7 @@
 
                 </div>
 
-                    @enderror
+                @enderror
 
             </div>
 
@@ -30,7 +30,20 @@
             <div class="mb-4">
 
                 <label for="name" class="sr-only">Username</label>
-                <input type="text" name="Username" id="Username" placeholder=" Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus="">
+                <!-- <input type="text" name="Username" id="Username" placeholder=" Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus=""> -->
+
+
+                <input type="text" name="Username" id="Username" placeholder="Your Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror " valus="">
+
+                @error('username')
+
+                <div class="text-red-500 mt-2 text-sm">
+
+                    {{ $message}}
+
+                </div>
+
+                @enderror
 
             </div>
 
@@ -38,14 +51,48 @@
             <div class="mb-4">
 
                 <label for="Email" class="sr-only">Email</label>
-                <input type="text" name="Email" id="Email" placeholder=" Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus="">
+                <!-- <input type="text" name="Email" id="Email" placeholder=" Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus=""> -->
+
+                <input type="text" name="Email" id="Email" placeholder="Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror " valus="">
+
+                @error('email')
+
+                <div class="text-red-500 mt-2 text-sm">
+
+                    {{ $message}}
+
+                </div>
+
+                @enderror
+
+
+
+
 
             </div>
 
             <div class="mb-4">
 
                 <label for="Password" class="sr-only">Password</label>
-                <input type="text" name="Password" id="Password" placeholder=" Choose Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus="">
+
+
+                <!-- <input type="text" name="Password" id="Password" placeholder=" Choose Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus=""> -->
+
+
+                <input type="text" name="Password" id="Password" placeholder="Your Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror " valus="">
+
+                @error('password')
+
+                <div class="text-red-500 mt-2 text-sm">
+
+                    {{ $message}}
+
+                </div>
+
+                @enderror
+
+
+
 
             </div>
 
