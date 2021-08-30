@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
- 
+
 class RegisterController extends Controller
 {
     public function index()
@@ -16,6 +16,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+
 
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -29,11 +30,11 @@ class RegisterController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password) ,
+            'password' => Hash::make($request->password),
         ]);
 
-        //Sign in 
 
+        auth()->attempt($request->only('email', 'password'));
 
         return redirect()->route('dashboard');
     }

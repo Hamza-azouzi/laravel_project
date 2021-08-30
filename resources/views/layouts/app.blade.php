@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="e class=" p-3" n">
+<html lang="e class="    p-3" n">
 
 <head>
     <meta charset="UTF-8">
@@ -33,21 +33,38 @@
 
         <ul class="flex items-center">
 
-            <li>
-                <a href="" class="p-3">Hamza Azouzi</a>
-            </li>
+            @auth
 
-            <li>
-                <a href="" class="p-3">Login</a>
-            </li>
 
-            <li>
-                <a href=" {{ route('register') }}" class="p-3">Register</a>
-            </li>
 
-            <li>
-                <a href="" class="p-3">logout</a>
-            </li>
+                <li>
+                    <a href="" class="p-3">Hamza Azouzi</a>
+                </li>
+
+                <li>
+                    <a href="" class="p-3">Login</a>
+                </li>
+            @endauth
+
+
+
+            @guest
+
+
+
+
+                <li>
+                    <a href=" {{ route('register') }}" class="p-3">Register</a>
+                </li>
+
+                <li>
+                    <a href="" class="p-3">logout</a>
+                </li>
+
+            @endguest
+
+
+
 
         </ul>
     </nav>
