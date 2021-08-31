@@ -15,7 +15,7 @@ class LoginController extends Controller
     }
 
 
-    
+
     public function store(Request $request)
     {
 
@@ -26,7 +26,17 @@ class LoginController extends Controller
 
         ]);
 
-        auth()->attempt($request->only('email','password'));
+
+
+        if(!auth()->attempt($request->only('email','password'))){
+
+            return back()->with('status','Invalid login details');
+
+        }
+      
+
+
+
 
         return redirect()->route('dashboard');
 

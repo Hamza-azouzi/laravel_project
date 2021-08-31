@@ -2,119 +2,141 @@
 
 @section('content')
 
-<div class="flex justify-center">
-    <div class="w-4/12 bg-white p-6 rounded-lg">
+    <div class="flex justify-center">
+        <div class="w-4/12 bg-white p-6 rounded-lg">
 
-        <form action="{{ route('register') }}" method="post">
+            <form action="{{ route('register') }}" method="post">
 
-            @csrf
+                @csrf
 
-            <div class="mb-4">
+                <div class="mb-4">
 
-                <label for="name" class="sr-only">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror " value="{{ old('name') }}">
+                    <label for="name" class="sr-only">Name</label>
 
-                @error('name')
+                    <input type="text" name="name" id="name" placeholder="Your name"
 
-                <div class="text-red-500 mt-2 text-sm">
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror "
 
-                    {{ $message}}
+                        value="{{ old('name') }}">
 
-                </div>
+                    @error('name')
 
-                @enderror
+                        <div class="text-red-500 mt-2 text-sm">
 
-            </div>
+                            {{ $message }}
 
+                        </div>
 
-            <div class="mb-4">
-
-                <label for="name" class="sr-only">Username</label>
-                <!-- <input type="text" name="Username" id="Username" placeholder=" Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value=""> -->
-
-
-                <input type="text" name="username" id="username" placeholder="Your Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror " value="{{ old('username') }}">
-
-                @error('username')
-
-                <div class="text-red-500 mt-2 text-sm">
-
-                    {{ $message}}
+                    @enderror
 
                 </div>
 
-                @enderror
 
-            </div>
+                <div class="mb-4">
 
+                    <label for="name" class="sr-only">Username</label>
 
-            <div class="mb-4">
-
-                <label for="Email" class="sr-only">Email</label>
-                <!-- <input type="text" name="Email" id="Email" placeholder=" Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value=""> -->
-
-                <input type="email" name="email" id="email" placeholder="Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror " value="{{ old('email') }}">
-
-                @error('email')
-
-                <div class="text-red-500 mt-2 text-sm">
-
-                    {{ $message}}
-
-                </div>
-
-                @enderror
+                    <!-- <input type="text" name="Username" id="Username" placeholder=" Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value=""> -->
 
 
+                    <input type="text" name="username" id="username" placeholder="Your Username"
 
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror "
 
+                        value="{{ old('username') }}">
 
-            </div>
+                    @error('username')
 
-            <div class="mb-4">
+                        <div class="text-red-500 mt-2 text-sm">
 
-                <label for="password" class="sr-only">Password</label>
+                            {{ $message }}
 
+                        </div>
 
-                <!-- <input type="text" name="Password" id="Password" placeholder=" Choose Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus=""> -->
-
-
-                <input type="password" name="password" id="password" placeholder="Your Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror " value="{{ old('password') }}">
-
-                @error('password')
-
-                <div class="text-red-500 mt-2 text-sm">
-
-                    {{ $message}}
+                    @enderror
 
                 </div>
 
-                @enderror
+
+                <div class="mb-4">
+
+                    <label for="Email" class="sr-only">Email</label>
+
+                    <!-- <input type="text" name="Email" id="Email" placeholder=" Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value=""> -->
+
+                    <input type="email" name="email" id="email" placeholder="Your Email"
+
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror "
+
+                        value="{{ old('email') }}">
+
+                    @error('email')
+
+                        <div class="text-red-500 mt-2 text-sm">
+
+                            {{ $message }}
+
+                        </div>
+
+                    @enderror
 
 
 
 
-            </div>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label for="password" class="sr-only">Password</label>
 
 
-            <div class="mb-4">
-
-                <label for="Password_confirmation" class="sr-only">Repeat your password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" placeholder=" Repeat Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg">
-
-            </div>
+                    <!-- <input type="text" name="Password" id="Password" placeholder=" Choose Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg" valus=""> -->
 
 
-            <div class="mb-4">
+                    <input type="password" name="password" id="password" placeholder="Your Password"
 
-                <button type="submit" class="bg-blue-500 border-2 w-full p-4 rounded-lg">Register </button>
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror "
 
-            </div>
+                        value="{{ old('password') }}">
 
-        </form>
+                    @error('password')
 
+                        <div class="text-red-500 mt-2 text-sm">
+
+                            {{ $message }}
+
+                        </div>
+
+                    @enderror
+
+
+
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <label for="Password_confirmation" class="sr-only">Repeat your password</label>
+
+                    <input type="password" name="password_confirmation" id="password_confirmation"
+                    
+                        placeholder=" Repeat Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg">
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <button type="submit" class="bg-blue-500 border-2 w-full p-4 rounded-lg">Register </button>
+
+                </div>
+
+            </form>
+
+        </div>
     </div>
-</div>
 
 
 @endsection
